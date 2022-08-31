@@ -1,19 +1,20 @@
-language: nodejs
+language: minimal
 
 services:
   - docker
 
-build:
+script:
+# Build the Docker images
 - docker-compose -f docker-compose-build.yaml build --parallel
 
-login:
+# Login to DockerHub
 - echo "$PASSWORD" | docker login -u "$USERNAME" --password-stdin
 
-tag:
+# Tag the Docker images to the Registry
 - docker tag udagram-api-feed "$USERNAME/udagram-api-feed:v1.0.0"
 - docker tag udagram-api-user "$USERNAME/udagram-api-user:v1.0.0"
 - docker tag udagram-frontend "$USERNAME/udagram-frontend:v1.0.0"
 - docker tag reverseproxy "$USERNAME/reverseproxy:v1.0.0"
 
-push:
+# Push to DockerHub Registry
 - docker-compose -f docker-compose-push.yaml push

@@ -20,7 +20,6 @@ jobs:
     - name: Build the Docker images
       run: |
           docker-compose -f docker-compose-build.yaml build --parallel
-          docker images
           
     - name: Login to DockerHub
       run: echo "$PASSWORD" | docker login -u "$USERNAME" --password-stdin
