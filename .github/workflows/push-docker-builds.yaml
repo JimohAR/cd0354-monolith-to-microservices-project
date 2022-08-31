@@ -1,9 +1,5 @@
 name: Docker Image Push CI
-on:
-	push:
-		branches: [ "main", "dev" ]
-	workflow_dispatch:
-	 
+on: push
 env:
 	USERNAME: ${{ secrets.DOCKER_USERNAME }}
 	PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
