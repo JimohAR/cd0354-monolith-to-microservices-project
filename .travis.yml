@@ -13,7 +13,7 @@ script:
 # Tag the Docker images to the Registry
 - docker tag udagram-api-feed "$USERNAME/udagram-api-feed:v1.0.0"
 - docker tag udagram-api-user "$USERNAME/udagram-api-user:v1.0.0"
-- docker tag udagram-frontend "$USERNAME/udagram-frontend:v1.0.0"
+- docker tag udagram-frontend:local "$USERNAME/udagram-frontend:v1.0.0"
 - docker tag reverseproxy "$USERNAME/reverseproxy:v1.0.0"
 
 # Push to DockerHub Registry
