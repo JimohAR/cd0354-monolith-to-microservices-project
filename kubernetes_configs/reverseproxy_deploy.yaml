@@ -17,6 +17,7 @@ spec:
       containers:
         - name: reverseproxy
           image: jimohar/reverseproxy:v1.0.0
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           envFrom:

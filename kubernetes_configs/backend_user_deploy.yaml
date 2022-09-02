@@ -17,6 +17,7 @@ spec:
       containers:
         - name: backend-user
           image: jimohar/udagram-api-user:v1.0.0
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           envFrom:
