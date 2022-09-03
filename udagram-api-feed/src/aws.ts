@@ -2,9 +2,9 @@ import AWS = require('aws-sdk');
 import { config } from './config/config';
 
 
-// Configure AWS - Already set in environment variables
-// const credentials = new AWS.SharedIniFileCredentials({profile: config.aws_profile});
-// AWS.config.credentials = credentials;
+// Configure AWS - Already set in environment variables for K8s
+const credentials = new AWS.SharedIniFileCredentials({ profile: config.aws_profile });
+AWS.config.credentials = credentials;
 
 export const s3 = new AWS.S3({
   signatureVersion: 'v4',
